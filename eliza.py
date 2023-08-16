@@ -6,7 +6,7 @@ openai.api_key = "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"
 
 def chatbot_interface(user_input):
     response = openai.Completion.create(
-        engine="text-davinci-003",  # Use the text-davinci-003 engine
+        engine="davinci-codex",  # Use the davinci-codex engine
         prompt=user_input,
         max_tokens=50  # You can adjust this value based on the desired response length
     )
