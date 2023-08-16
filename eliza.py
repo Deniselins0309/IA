@@ -32,4 +32,4 @@ if st.sidebar.button("Iniciar Conversa"):
     st.text("Resposta:")
     st.success(bot_response)
 
-st.write("Desenvolvido com ❤️ por [Denise Lins]")
+st.write("Desenvolvido com ❤️ por [Denise Lins ]")
