@@ -1,12 +1,16 @@
 import streamlit as st
-import openai as gpt
+import openai
 
 # Configure the OpenAI API Key (replace with your own key)
-gpt.api_key = "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"
+openai.api_key = "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"
 
-def chatbot_interface(Converse_comigo):
-    completion = gpt.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": Converse_comigo}])
-    return completion.choices[0].message["content"]
+def chatbot_interface(user_input):
+    response = openai.Completion.create(
+        engine="text-davinci-003",  # Use the text-davinci-003 engine
+        prompt=user_input,
+        max_tokens=50  # You can adjust this value based on the desired response length
+    )
+    return response.choices[0].text.strip()
 
 st.title("Chatbot de Atendimento Eliza")
 st.markdown("Bem-vindo ao nosso chatbot de atendimento psicológico com nossa querida Eliza. Sinta-se à vontade para conversar sobre seus sentimentos e preocupações.")
